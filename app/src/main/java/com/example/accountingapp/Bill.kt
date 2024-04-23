@@ -18,17 +18,16 @@ enum class BillType {
     EXPENSE //支出
 }
 
-//大类与子类
-enum class CategoryType {
-    MAIN_CATEGORY,  //大类
-    SUB_CATEGORY    //子类
-}
-
-//具体大类与子类
-data class Category(
+//具体大类
+data class MainCategory(
     val name: String,   //类名
-    val categoryType: CategoryType, //大类与子类
     val billType: BillType  //收入与支出
+)
+
+//具体子类
+data class SubCategory(
+    val name: String,   //类名
+    val parent: String    //父类名
 )
 
 //账单类
@@ -37,13 +36,15 @@ data class Bill(
     val type: BillType,
     val timestamp: LocalDateTime,
     val note: String?,
-    val category: Category
+    val mainCategory: MainCategory,
+    val subCategory: SubCategory
 )
 
 //账单管理器
 class BillManager(private val context: Context) {
     private val bills = mutableListOf<Bill>()   //帐单列表
-    private val categories = mutableListOf<Category>()  //类别列表
+    private val mainCategories = mutableListOf<MainCategory>()  //大类列表
+    private val subCategories = mutableListOf<SubCategory>()  //子类列表
 
     init {
         loadPredefinedCategories()    //预定义类别
@@ -62,25 +63,30 @@ class BillManager(private val context: Context) {
         var eventType = parser.eventType
         //存储解析的类别名称和类型
         lateinit var name: String
-        lateinit var categoryType: CategoryType
         lateinit var billType: BillType
+        lateinit var parent: String
         //开始循环直到XML文件结尾
         while(eventType != XmlPullParser.END_DOCUMENT) {
             when(eventType) {
                 XmlPullParser.START_TAG -> {
                     //如果起始标签为category，则将类别名称和类型存到相应变量中
-                    if (parser.name == "category") {
+                    if (parser.name == "mainCategory") {
                         name = parser.getAttributeValue(null, "name")
-                        val categoryTypeString = parser.getAttributeValue(null, "categoryType")
-                        categoryType = CategoryType.valueOf(categoryTypeString)
                         val billTypeString = parser.getAttributeValue(null, "billType")
                         billType = BillType.valueOf(billTypeString)
+                    }
+                    if (parser.name == "subCategory") {
+                        name = parser.getAttributeValue(null, "name")
+                        parent = parser.getAttributeValue(null, "parent")
                     }
                 }
                 XmlPullParser.END_TAG -> {
                     //如果结束标签为category，则将两个变量封装为category对象并加入categories列表中
+                    if (parser.name == "mainCategory") {
+                        mainCategories.add(MainCategory(name, billType))
+                    }
                     if (parser.name == "category") {
-                        categories.add(Category(name, categoryType, billType))
+                        subCategories.add(SubCategory(name, parent))
                     }
                 }
             }
@@ -93,7 +99,13 @@ class BillManager(private val context: Context) {
         bills.add(bill)
     }
 
-    fun addCategory(category: Category) {
-        categories.add(category)
+    //增加大类
+    fun addMainCategory(mainCategory: MainCategory) {
+        mainCategories.add(mainCategory)
+    }
+
+    //增加子类
+    fun addSubCategory(subCategory: SubCategory) {
+        subCategories.add(subCategory)
     }
 }
