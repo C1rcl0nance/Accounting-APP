@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--支出大类-->
+    <category name="购物消费" categoryType="MAIN_CATEGORY" billType="EXPENSE"/>
+    <category name="食品餐饮" categoryType="MAIN_CATEGORY" billType="EXPENSE"/>
+    <category name="出行交通" categoryType="MAIN_CATEGORY" billType="EXPENSE"/>
+    <category name="休闲娱乐" categoryType="MAIN_CATEGORY" billType="EXPENSE"/>
+    <category name="居家生活" categoryType="MAIN_CATEGORY" billType="EXPENSE"/>
+    <category name="文化教育" categoryType="MAIN_CATEGORY" billType="EXPENSE"/>
+    <category name="送礼人情" categoryType="MAIN_CATEGORY" billType="EXPENSE"/>
+    <category name="健康医疗" categoryType="MAIN_CATEGORY" billType="EXPENSE"/>
+    <category name="其他" categoryType="MAIN_CATEGORY" billType="EXPENSE"/>
+
+    <!--收入大类-->
+    <category name="中奖" categoryType="MAIN_CATEGORY" billType="INCOME"/>
+    <category name="理财盈利" categoryType="MAIN_CATEGORY" billType="INCOME"/>
+    <category name="礼金人情" categoryType="MAIN_CATEGORY" billType="INCOME"/>
+    <category name="借入" categoryType="MAIN_CATEGORY" billType="INCOME"/>
+    <category name="奖金" categoryType="MAIN_CATEGORY" billType="INCOME"/>
+    <category name="兼职外快" categoryType="MAIN_CATEGORY" billType="INCOME"/>
+    <category name="工资" categoryType="MAIN_CATEGORY" billType="INCOME"/>
+    <category name="二手闲置" categoryType="MAIN_CATEGORY" billType="INCOME"/>
+    <category name="补贴" categoryType="MAIN_CATEGORY" billType="INCOME"/>
+    <category name="报销" categoryType="MAIN_CATEGORY" billType="INCOME"/>
+
+    <!--支出子类-->
+    <category name="日常家居" categoryType="SUB_CATEGORY" billType="EXPENSE"/>
+    <category name="个护美妆" categoryType="SUB_CATEGORY" billType="EXPENSE"/>
+    <category name="手机数码" categoryType="SUB_CATEGORY" billType="EXPENSE"/>
+    <category name="虚拟充值" categoryType="SUB_CATEGORY" billType="EXPENSE"/>
+    <category name="生活电器" categoryType="SUB_CATEGORY" billType="EXPENSE"/>
+    <category name="配饰腕表" categoryType="SUB_CATEGORY" billType="EXPENSE"/>
+    <category name="母婴玩具" categoryType="SUB_CATEGORY" billType="EXPENSE"/>
+    <category name="服饰运动" categoryType="SUB_CATEGORY" billType="EXPENSE"/>
+    <category name="宠物用品" categoryType="SUB_CATEGORY" billType="EXPENSE"/>
+</resources>
