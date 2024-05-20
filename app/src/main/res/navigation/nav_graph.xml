@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.accountingapp.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_addBillFragment"
+            app:destination="@id/addBillFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBillFragment"
+        android:name="com.example.accountingapp.fragments.AddBillFragment"
+        android:label="fragment_add_bill"
+        tools:layout="@layout/fragment_add_bill" />
+    <fragment
+        android:id="@+id/incomeFragment"
+        android:name="com.example.yourapp.IncomeFragment"
+        android:label="IncomeFragment" >
+        <action
+            android:id="@+id/action_incomeFragment_to_expenseFragment"
+            app:destination="@id/expenseFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/expenseFragment"
+        android:name="com.example.yourapp.ExpenseFragment"
+        android:label="ExpenseFragment" >
+        <action
+            android:id="@+id/action_expenseFragment_to_incomeFragment"
+            app:destination="@id/incomeFragment" />
+    </fragment>
+</navigation>
