@@ -37,4 +37,3 @@ class CategoryAdapter(private val context: Context, private val categoryList: Li
         return view
     }
 }
-

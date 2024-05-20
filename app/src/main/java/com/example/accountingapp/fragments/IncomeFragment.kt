@@ -52,4 +52,3 @@ class IncomeFragment : Fragment() {
         gridView.adapter = adapter
     }
 }
-R
