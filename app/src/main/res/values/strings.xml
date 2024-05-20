@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">Accounting APP</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="支出">支出</string>
+    <string name="收入">收入</string>
+    <string name="日常账本">日常账本</string>
+    <string name="本月收入">本月收入</string>
+    <string name="本月结余">本月结余</string>
+    <string name="本月支出">本月支出</string>
+    <string name="_0">0</string>
+    <string name="添加备注">添加备注</string>
+    <string name="_0_00">0.00</string>
+    <string name="清零">清零</string>
+    <string name="dot">.</string>
+    <string name="times">*</string>
+    <string name="divide">/</string>
+    <string name="minus">-</string>
+    <string name="_9">9</string>
+    <string name="_8">8</string>
+    <string name="_7">7</string>
+    <string name="plus">+</string>
+    <string name="_6">6</string>
+    <string name="_5">5</string>
+    <string name="_4">4</string>
+    <string name="删除">删除</string>
+    <string name="_3">3</string>
+    <string name="_2">2</string>
+    <string name="_1">1</string>
+    <string name="取消">取消</string>
+    <string name="_0_0">0.0</string>
+
+    <string name="amount_placeholder">%s</string>
+    <string name="完成">完成</string>
+    <string name="新增">新增</string>
 </resources>
